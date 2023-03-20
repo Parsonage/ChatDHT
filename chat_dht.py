@@ -1,16 +1,16 @@
 """A non-dual AI to replace... er... supplement D.H. Thorne"""
 import os
-import sys
 import openai
 import tiktoken
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-system_prompt = 'You are a non-dual mystic.'
-user_prompt = 'Explain art from a non-dual perspective.'
+SYSTEM_PROMPT = 'You are a non-dual mystic.'
+user_subject = input('What is your subject? ')
+user_prompt = f'Explain {user_subject} from a non-dual perspective.'
 
 messages=[
-        {'role': 'system', 'content': system_prompt},
+        {'role': 'system', 'content': SYSTEM_PROMPT},
         {'role': 'user', 'content': user_prompt}
 ]
 
@@ -25,7 +25,7 @@ for message in messages:
 
 completion = openai.ChatCompletion.create(
     model='gpt-3.5-turbo',
-    messages=messages, 
+    messages=messages,
     max_tokens=4096 - NUM_TOKENS
 )
 

@@ -1,11 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "openai"
-    directory: "/"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "tiktoken"
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"

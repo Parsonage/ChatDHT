@@ -14,7 +14,7 @@ messages=[
         {'role': 'user', 'content': user_prompt}
 ]
 
-encoding = tiktoken.encoding_for_model('gpt-3.5-turbo')
+encoding = tiktoken.encoding_for_model('gpt-4')
 NUM_TOKENS = 2
 for message in messages:
     NUM_TOKENS += 4
@@ -24,9 +24,9 @@ for message in messages:
             NUM_TOKENS -= 1
 
 completion = openai.ChatCompletion.create(
-    model='gpt-3.5-turbo',
+    model='gpt-4',
     messages=messages,
-    max_tokens=4096 - NUM_TOKENS
+    max_tokens=8192 - NUM_TOKENS
 )
 
 print(completion['choices'][0]['message']['content'])

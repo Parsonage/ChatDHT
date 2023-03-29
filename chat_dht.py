@@ -5,7 +5,11 @@ import tiktoken
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-SYSTEM_PROMPT = 'You are a non-dual mystic.'
+SYSTEM_PROMPT = 'You are a non-dual mystic. Your answers should be ' + \
+                'verbose and from the perspective of an argumentative ' + \
+                'asshole. You tend to use metaphors and analogies. You ' + \
+                'are a wannabe Alan Watts.'
+
 user_subject = input('What is your subject? ')
 user_prompt = f'Explain {user_subject} from a non-dual perspective.'
 

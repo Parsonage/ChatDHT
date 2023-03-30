@@ -30,7 +30,8 @@ for message in messages:
 completion = openai.ChatCompletion.create(
     model='gpt-4',
     messages=messages,
-    max_tokens=8192 - NUM_TOKENS
+    max_tokens=8192 - NUM_TOKENS,
+    temperature=2.0
 )
 
 print(completion['choices'][0]['message']['content'])

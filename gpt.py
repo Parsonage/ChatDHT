@@ -61,8 +61,8 @@ class Completion:
         self.completion = openai.ChatCompletion.create(
             model='gpt-4',
             messages=prompt.messages,
-            max_tokens=8096 - prompt.num_tokens,
-            temperature=1.0
+            max_tokens=8192 - prompt.num_tokens,
+            temperature=2.0
         )
 
     def __repr__(self) -> str:
